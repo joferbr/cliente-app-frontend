@@ -1,4 +1,4 @@
-export class ServicoPrestado {
+export class servicoPrestado {
     descricao?:string;
     preco?:string;
     data?:string;

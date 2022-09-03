@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { ServicoPrestado } from './servico-prestado/servicoPrestado';
+import { servicoPrestado } from './servico-prestado/servicoPrestado';
 import { environment } from '../environments/environment';
 
 @Injectable({
@@ -13,7 +13,7 @@ export class ServicoPrestadoService {
 
   constructor(private http: HttpClient) { }
 
-  salvar(servicoPrestado: ServicoPrestado): Observable<ServicoPrestado> {
-    return this.http.post<ServicoPrestado>('this.apiURL', servicoPrestado);
+  salvar(servicoPrestado: servicoPrestado): Observable<servicoPrestado> {
+    return this.http.post<servicoPrestado>('this.apiURL', servicoPrestado);
   }
 }
