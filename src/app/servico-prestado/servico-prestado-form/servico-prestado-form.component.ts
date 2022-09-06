@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Cliente } from 'src/app/clientes/cliente';
+import { Cliente } from '../../clientes/cliente';
 import { ClientesService } from '../../clientes.service';
 import { ServicoPrestado } from '../servicoPrestado';
 import { ServicoPrestadoService } from '../../servico-prestado.service'
@@ -14,7 +14,7 @@ export class ServicoPrestadoFormComponent implements OnInit {
   clientes: Cliente[] = []
   servico: ServicoPrestado;
   success: boolean = false;
-  errors?: String[];
+  errors?: String[] | null;
 
   constructor(
     private clienteService: ClientesService,
@@ -34,7 +34,7 @@ export class ServicoPrestadoFormComponent implements OnInit {
     .salvar(this.servico)
     .subscribe( response => {
       this.success = true;
-      this.errors = [];
+      this.errors = null;
       this.servico = new ServicoPrestado();
     }, errorResponse => {
       this.success = false;

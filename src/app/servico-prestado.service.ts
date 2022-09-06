@@ -5,7 +5,6 @@ import { ServicoPrestado } from './servico-prestado/servicoPrestado';
 import { environment } from '../environments/environment';
 import { ServicoPrestadoBusca } from './servico-prestado/servico-prestado-lista/servicoPrestadoBusca';
 
-
 @Injectable({
   providedIn: 'root'
 })
@@ -16,7 +15,7 @@ export class ServicoPrestadoService {
   constructor(private http: HttpClient) { }
 
   salvar(servicoPrestado: ServicoPrestado): Observable<ServicoPrestado> {
-    return this.http.post<ServicoPrestado>(`${this.apiURL}`, servicoPrestado);
+    return this.http.post<ServicoPrestado>(this.apiURL, servicoPrestado);
   }
 
   buscar(nome: string, mes: number): Observable<ServicoPrestadoBusca[]> {

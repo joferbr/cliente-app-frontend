@@ -14,8 +14,8 @@ export class ClientesFormComponent implements OnInit {
 
   cliente: Cliente;
   success: boolean = false;
-  errors?: String[];
-  id: number = 0;
+  errors?: String[] | null;
+  id?: number;
 
   constructor(
       private service: ClientesService,
@@ -49,7 +49,7 @@ export class ClientesFormComponent implements OnInit {
         .atualizar(this.cliente)
         .subscribe(response => {
           this.success = true;
-          this.errors = [];
+          this.errors = null;
         }, errorResponse => {
           this.errors = ['Erro ao atualizar o cliente.']
         })
@@ -60,7 +60,7 @@ export class ClientesFormComponent implements OnInit {
     .salvar(this.cliente)
     .subscribe( response => {
       this.success = true;
-      this.errors = [];
+      this.errors = null;
       this.cliente = response;
     }, errorResponse => {
       this.success = false;
