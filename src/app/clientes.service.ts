@@ -7,33 +7,6 @@ import { environment } from 'src/environments/environment';
 @Injectable({
   providedIn: 'root'
 })
-/*
-export class ClientesService {
-
-  constructor( private http: HttpClient) { }
-
-  salvar( cliente: Cliente ): Observable<Cliente> {
-    return this.http.post<Cliente>('${environment.api}/clientes', cliente)
-  }
-
-  atualizar( cliente: Cliente ): Observable<any> {
-    return this.http.put<Cliente>(`${environment.api}/clientes/${cliente.id}`, cliente)
-  }
-
-  getClientes() : Observable<Cliente[]> {
-    return this.http.get<Cliente[]>('${environment.api}/clientes');
-  }
-
-  getClenteById(id: number) : Observable<Cliente> {
-    return this.http.get<any>(`${environment.api}/clientes/${id}`);
-  }
-
-  deletar( cliente: Cliente ): Observable<any> {
-    return this.http.delete<any>(`${environment.api}/clientes/${cliente.id}`);
-  }
-}
-*/
-
 
 export class ClientesService {
 
@@ -74,3 +47,30 @@ export class ClientesService {
 getClientes() : Observable<Cliente[]> {
   return of([]);
 }*/
+
+/*
+export class ClientesService {
+
+  constructor( private http: HttpClient) { }
+
+  salvar( cliente: Cliente ): Observable<Cliente> {
+    return this.http.post<Cliente>('${environment.api}/clientes', cliente)
+  }
+
+  atualizar( cliente: Cliente ): Observable<any> {
+    return this.http.put<Cliente>(`${environment.api}/clientes/${cliente.id}`, cliente)
+  }
+
+  getClientes() : Observable<Cliente[]> {
+    return this.http.get<Cliente[]>('${environment.api}/clientes');
+  }
+
+  getClenteById(id: number) : Observable<Cliente> {
+    return this.http.get<any>(`${environment.api}/clientes/${id}`);
+  }
+
+  deletar( cliente: Cliente ): Observable<any> {
+    return this.http.delete<any>(`${environment.api}/clientes/${cliente.id}`);
+  }
+}
+*/

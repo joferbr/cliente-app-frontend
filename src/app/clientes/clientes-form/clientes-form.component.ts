@@ -53,7 +53,8 @@ export class ClientesFormComponent implements OnInit {
         }, errorResponse => {
           this.errors = ['Erro ao atualizar o cliente.']
         })
-    }
+
+    }else {
 
     this.service
     .salvar(this.cliente)
@@ -64,8 +65,8 @@ export class ClientesFormComponent implements OnInit {
     }, errorResponse => {
       this.success = false;
       this.errors = errorResponse.error.errors;
-    }
-    )
+    })
   }
+}
 
 }
