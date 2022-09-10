@@ -10,16 +10,16 @@ import { environment } from 'src/environments/environment';
 
 export class ClientesService {
 
-  apiURL: string = environment.apiURLBase + '/clientes';
+  apiURL: string = environment.apiURLBase + '/api/clientes';
 
   constructor( private http: HttpClient) { }
 
   salvar( cliente: Cliente ): Observable<Cliente> {
-    return this.http.post<Cliente>(`${this.apiURL}`, cliente)
+    return this.http.post<Cliente>(`${this.apiURL}`, cliente);
   }
 
   atualizar( cliente: Cliente ): Observable<any> {
-    return this.http.put<Cliente>(`${this.apiURL}/${cliente.id}`, cliente)
+    return this.http.put<Cliente>(`${this.apiURL}/${cliente.id}`, cliente);
   }
 
   getClientes() : Observable<Cliente[]> {

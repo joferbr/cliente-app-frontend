@@ -20,18 +20,18 @@ export class ServicoPrestadoService {
 
   buscar(nome: string, mes: number): Observable<ServicoPrestadoBusca[]> {
 
+    const httpParams = new HttpParams()
+      .set("nome", nome)
+      .set("mes", mes ? mes.toString() : '');
+
+    const url = this.apiURL + "?" + httpParams.toString();
+    return this.http.get<any>(url);
+  }
+}
     //Debugar
     //    console.log('nome buscar', nome);
     //    console.log('mes buscar', mes);
     //FimDebugar
-
-    const httpParams = new HttpParams()
-      .set("nome", nome).set("mes", mes ? mes.toString() : '');
-
-    const url = this.apiURL + "?" + httpParams.toString();
+    
     // /api/servicos-prestados?nome=Maria$mes=1
     //console.log(url);
-
-    return this.http.get<any>(url);
-  }
-}

@@ -5,7 +5,8 @@
 export const environment = {
   production: false,
 
-  apiURLBase: "https://cliente-app-backend.herokuapp.com/api/"
+  apiURLBase: "http://localhost:8080"
+  //apiURLBase: "https://cliente-app-backend.herokuapp.com"
 };
 
 /*
